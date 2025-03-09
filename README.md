@@ -15,6 +15,7 @@ Display song details (title, artist, album art if available).
 Simple and user-friendly interface.
 
 📸 Screenshots
+
 ![image](https://github.com/user-attachments/assets/9f47c7f0-d933-4ef1-8490-49164be8f306)
 
 ![image](https://github.com/user-attachments/assets/bba5b709-8300-4612-8bb4-766f540c1934)
