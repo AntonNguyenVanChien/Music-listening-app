@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="song"
+            type="com.nhom6.mediaplayer.model.Song" />
+    </data>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gardientback"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity"
+    app:layout_constraintTop_toTopOf="@id/lnSearch"
+    android:screenOrientation="portrait"
+    >
+
+
+
+    <LinearLayout
+        android:id="@+id/lnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/lnListMenu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.49"
+        >
+
+        <include
+            layout="@layout/searchbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnListMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/lnSearch">
+
+        <TextView
+            android:id="@+id/txtLib"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_horizontal"
+            android:text="@string/thuvien"
+            android:textColor="#DCF6F0F0"
+            android:textColorHint="#00F4ECEC"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:id="@+id/_tatcabaihat"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:onClick="ShowAllSong"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtMusicLib"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:drawableStart="@drawable/ic_musiclib"
+                android:drawableEnd="@drawable/ic_right"
+                android:drawablePadding="20dp"
+                android:drawableTint="#DCF6F0F0"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/AllSong"
+                android:textColor="#DCF6F0F0"
+                android:textColorHint="#DCF6F0F0"
+                android:textColorLink="#DCF6F0F0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnYeuThich"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtYeuThich"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:drawableStart="@drawable/ic_heart"
+                android:drawableEnd="@drawable/ic_right"
+                android:drawablePadding="20dp"
+                android:drawableTint="#DCF6F0F0"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:onClick="ShowLoveSong"
+                android:text="@string/love"
+                android:textColor="#DCF6F0F0"
+                android:textColorHint="#DCF6F0F0"
+                android:textColorLink="#DCF6F0F0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnAlbum"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:onClick="ShowAlbum"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtAlbum"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:drawableStart="@drawable/ic_album"
+                android:drawableEnd="@drawable/ic_right"
+                android:drawablePadding="20dp"
+                android:drawableTint="#DCF6F0F0"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/album"
+                android:textColor="#DCF6F0F0"
+                android:textColorHint="#DCF6F0F0"
+                android:textColorLink="#DCF6F0F0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnPlayList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ShowPlayList"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtPlayList"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:drawableStart="@drawable/ic_playlist"
+                android:drawableEnd="@drawable/ic_right"
+                android:drawablePadding="20dp"
+                android:drawableTint="#DCF6F0F0"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/playlist"
+                android:textColor="#DCF6F0F0"
+                android:textColorHint="#DCF6F0F0"
+                android:textColorLink="#DCF6F0F0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnCaSi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ShowSinger"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtCaSi"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:drawableStart="@drawable/ic_micro"
+                android:drawableEnd="@drawable/ic_right"
+                android:drawablePadding="20dp"
+                android:drawableTint="#DCF6F0F0"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/singer"
+                android:textColor="#DCF6F0F0"
+                android:textColorHint="#DCF6F0F0"
+                android:textColorLink="#DCF6F0F0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtScan"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:drawableStart="@drawable/ic_scan"
+                android:drawableEnd="@drawable/ic_right"
+                android:drawablePadding="20dp"
+                android:drawableTint="#DCF6F0F0"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:onClick="clickScan"
+                android:text="@string/scan"
+                android:textColor="#DCF6F0F0"
+                android:textColorHint="#DCF6F0F0"
+                android:textColorLink="#DCF6F0F0"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnPlayBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="ShowPlayScreen"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        tools:layout_editor_absoluteX="-20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+</layout>
